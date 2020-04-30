@@ -16,13 +16,18 @@ public class ClienteResource {
     @JsonProperty("email")
     private String email;
 
+    @JsonProperty("endereco")
+    private String endereco;
+
     public ClienteResource() {}
     
-    public ClienteResource(@JsonProperty("nome") String nome,@JsonProperty("cpf") String cpf, @JsonProperty("telefone") String telefone, @JsonProperty("email") String email){
+    public ClienteResource(@JsonProperty("nome") String nome,@JsonProperty("cpf") String cpf, @JsonProperty("telefone") String telefone, @JsonProperty("email") String email,
+    @JsonProperty("endereco") String endereco){
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
+        this.endereco = endereco;
     }
 
 
@@ -60,7 +65,15 @@ public class ClienteResource {
 		this.email = email;
 	}
 
-	@Override
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    @Override
 	public String toString() {
 		return "ClienteResource [nome=" + nome + ", cpf=" + cpf + "]";
 	}

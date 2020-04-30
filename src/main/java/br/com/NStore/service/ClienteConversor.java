@@ -16,6 +16,7 @@ public class ClienteConversor {
             cliente.setCpf(clienteResource.getCpf());
             cliente.setTelefone(clienteResource.getTelefone());
             cliente.setEmail(clienteResource.getEmail());
+            cliente.setEndereco((clienteResource.getEndereco()));
             return cliente;
         }catch (Exception e){
             throw new ClienteResourceException("Falha ao converter o resource para entidade, resource: "+clienteResource);
